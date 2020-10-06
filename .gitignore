@@ -1,0 +1,9 @@
+shopenv/
+*.pyc
+shopdb
+catalog/static
+catalog/templates
+catalog/models.py
+catalog/views.py
+shop/urls.py
+shop/settings.py
