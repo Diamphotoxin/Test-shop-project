@@ -11,7 +11,11 @@
    <div class="default">
        {% block default %}
        <p><a href="{% url 'home' %}">HOME</a></p>
-       <p><a href="{% url  'cart' %}">CART</a></p>
+       {% if request.item_list|length > 0 %}
+           <p><a href="{% url  'cart' %}">CART ({{ request.item_list|length }})</a></p>
+       {% else %}
+           <p><a href="{% url  'cart' %}">CART</a></p>
+       {% endif %}
        {% endblock %}
    </div>
 

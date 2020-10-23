@@ -12,11 +12,19 @@
                         <br>
                     {% endfor %}
                 </ul>
-                <button style="border-radius: 20px" id="apply-filers" onclick="update()">Apply</button>
+                <button  id="apply-filers" onclick="update()">Apply</button>
             </nav>
             {% endblock %}
         </div>
+
         <div class="all-content">
+            <div class="Success message">
+                {% if messages %}
+                    {% for message in messages %}
+                        <p {% if message.tags %} class="{{ message.tags }}" {% endif %}> {{ message }} </p>
+                    {% endfor %}
+                {% endif %}
+            </div>
               {% for product in product_list %}
               <div class="product">
                   <p><a href="{% url 'detail' product.id %}">{{ product.name }}</a><br>

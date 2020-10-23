@@ -1,16 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-       <div class="all-content">
+    <h1>Your shopping cart</h1>
+    <table class="cart">
+        <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Unit price</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>1</td>
+                    <td>${{ product.price }}</td>
+                    <td>${{ product.price }}</td>
+                </tr>
+        {% endfor %}
+        <tr class="total">
+            <td>Total</td>
+            <td colspan="2"></td>
+            <td>${{ total_price }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <div class="checkout">
+        <p><strong><a href="{% url 'order' %}">CHECKOUT</a></strong></p>
+    </div>
 
-              {% for item in item_list %}
-              <div class="item">
-                  <p><a href="{% url 'detail' product.id %}">{{ item.name }}</a><br>
-                  <i>{{ item.category }}</i>  |  {{ item.quantity }} | {{ item.price }}</p>
-              </div>
-              {% endfor %}
-              <br>
-              <div class="checkout">
-                  <p><strong><a href="{% url 'order' %}" >CHECKOUT</a></strong></p>
-              </div>
-       </div>
 {% endblock %}

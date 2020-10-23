@@ -7,9 +7,9 @@
     <br>
     <p>{{ product.description }}</p>
     <p>{{ product.price }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="add_to_order" class="form-control btn btn-success"> Add to order </button>
+    </form>
     <br>
-    <button type="add_to_order" class="form-control btn btn-success"> Add to order </button>
-    <br>
-<!--    <button style="border-radius: 20px" id="apply-filers" onclick="update()">Apply</button>-->
-
 {% endblock %}
