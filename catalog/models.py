@@ -22,15 +22,12 @@ class Order(models.Model):
     items = models.ManyToManyField('Item')
 
     def __str__(self):
-        return self.id
+        return self.customer_name
 
 
 class Item(models.Model):
     quantity = models.PositiveIntegerField(default=1)
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.id
 
 
 class Category(models.Model):
