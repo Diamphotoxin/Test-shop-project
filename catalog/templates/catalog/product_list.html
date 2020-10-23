@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+ <div class="container">
+        <div class="sidebar" >
+            {% block sidebar %}
+            <nav style="text-align:center"><br>
+               <h3 style="color:#ffff66"><strong>CATEGORIES</strong></h3>
+                <ul style="text-align:left">
+                    {% for category in categories %}
+                        <input type="checkbox" id="category_{{category.id}}" onclick=handle_filter(this)>
+                        <label for="category_{{category.id}}" style="color:#ffff66">{{category}}</label>
+                        <br>
+                    {% endfor %}
+                </ul>
+                <button style="border-radius: 20px" id="apply-filers" onclick="update()">Apply</button>
+            </nav>
+            {% endblock %}
+        </div>
+        <div class="all-content">
+              {% for product in product_list %}
+              <div class="product">
+                  <p><a href="{% url 'detail' product.id %}">{{ product.name }}</a><br>
+                  <i>{{ product.category }}</i></p>
+                  <p><img src="{{ product.img.url }} "width="150" height="200"></p>
+                  <p>{{ product.price }}</p>
+              </div>
+              {% endfor %}
+       </div>
+ </div>
+{% endblock %}
+
+
+

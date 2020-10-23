@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+       <div class="all-content">
+
+              {% for item in item_list %}
+              <div class="item">
+                  <p><a href="{% url 'detail' product.id %}">{{ item.name }}</a><br>
+                  <i>{{ item.category }}</i>  |  {{ item.quantity }} | {{ item.price }}</p>
+              </div>
+              {% endfor %}
+              <br>
+              <div class="checkout">
+                  <p><strong><a href="{% url 'order' %}" >CHECKOUT</a></strong></p>
+              </div>
+       </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% block title %}<title>SHOP</title>{% endblock %}
+     <meta charset="utf-8">
+     {% load static %}
+     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+   <div class="default">
+       {% block default %}
+       <p><a href="{% url 'home' %}">HOME</a></p>
+       <p><a href="{% url  'cart' %}">CART</a></p>
+       {% endblock %}
+   </div>
+
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1><strong>{{ product.name }}</strong></h1>
+    <br>
+    <p><img src="{{ product.img.url }} "></p>
+    <br>
+    <p>{{ product.description }}</p>
+    <p>{{ product.price }}</p>
+    <br>
+    <button type="add_to_order" class="form-control btn btn-success"> Add to order </button>
+    <br>
+<!--    <button style="border-radius: 20px" id="apply-filers" onclick="update()">Apply</button>-->
+
+{% endblock %}

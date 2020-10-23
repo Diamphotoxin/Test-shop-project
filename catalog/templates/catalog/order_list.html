@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <h1>Fill the form</h1>
+  <div class="container text-center">
+    <div id="form_container">
+      <form method="post">
+        {% csrf_token %}
+        Name: <input type="text" name="customer_name"><br>
+        Email: <input type="email" name="email"><br>
+        Phone: <input type="text" name="phone">
+        <div class="form-actions form-group ">
+          <br>
+          <button type="submit" class="form-control btn btn-success"> Submit </button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
