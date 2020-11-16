@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, View
 from .models import Product, Order, Item, Category
 from .forms import OrderForm
 from shop.settings import RECIPIENTS_EMAIL, DEFAULT_FROM_EMAIL
@@ -43,15 +43,11 @@ class ProductDetailView(DetailView):
         return render(request, self.template_name, context=context)
 
 
-class ItemListView(ListView):
+class ItemListView(View):
     template_name = 'catalog/item_list.html'
 
     def get(self, request, *args, **kwargs):
-        products = Product.objects.all()
-        order_product_list = []
-        for product in products:
-            if product.id in request.session['items']:
-                order_product_list.append(Product.objects.get(id=product.id))
+        order_product_list = Product.objects.filter(pk__in=request.session.get('items', []))
 
         list_of_price = [prod.price for prod in order_product_list]
         total_price = sum(list_of_price)
