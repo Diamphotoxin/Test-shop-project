@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8effb9e6-7a68-40ba-bd0d-a6d568ef981d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/catalog/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templates/catalog/item_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templates/catalog/order_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templates/catalog/product_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog/templates/catalog/product_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog/templates /base.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog/templates /product/product_detail.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/catalog/templates /product/product_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
