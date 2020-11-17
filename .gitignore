@@ -1,4 +1,4 @@
 shopenv/
 *.pyc
-
+local_settings.py
 
