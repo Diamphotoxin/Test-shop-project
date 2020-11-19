@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8effb9e6-7a68-40ba-bd0d-a6d568ef981d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/templates/catalog/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/templates/catalog/product_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,9 +136,9 @@
       <screen x="66" y="27" width="1300" height="741" />
     </state>
     <state x="166" y="127" width="1100" height="541" key="ShowDiffWithBranchDialog/66.27.1300.741@66.27.1300.741" timestamp="1605631344547" />
-    <state x="379" y="89" key="search.everywhere.popup" timestamp="1601659692385">
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1605794535540">
       <screen x="66" y="27" width="1300" height="741" />
     </state>
-    <state x="379" y="89" key="search.everywhere.popup/66.27.1300.741@66.27.1300.741" timestamp="1601659692385" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/66.27.1300.741@66.27.1300.741" timestamp="1605794535540" />
   </component>
 </project>
