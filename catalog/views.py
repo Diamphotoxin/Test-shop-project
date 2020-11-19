@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, View
-from .models import Product, Order, Item, Category
+from .models import Product, Order, Item, Category, Attribute, AttributeValue
 from .forms import OrderForm
 from shop.settings import RECIPIENTS_EMAIL, DEFAULT_FROM_EMAIL
 from django.core.mail import send_mail
@@ -13,13 +13,22 @@ class ProductListView(ListView):  # home page
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
+        context['attributes'] = Attribute.objects.all()
+        context['attribute_value'] = AttributeValue.objects.all()
+
         return context
 
     def get_queryset(self):
         category = self.request.GET.getlist('category')
+
+        attribute_value = self.request.GET.getlist('attribute_value')
         queryset = Product.objects.all()
         if category:
             queryset = queryset.filter(category__id__in=category)
+            if attribute_value:  # do not sure about
+                applying_attributes = AttributeValue.objects.filter(value__in=attribute_value)
+                product_id = [val.product for val in applying_attributes]
+                queryset = queryset.filter(pk__in=product_id)
         return queryset
 
 

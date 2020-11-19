@@ -1,4 +1,4 @@
-       var args = {'category': []};
+       var args = {'category': [], 'attribute_value': []};
         var search = {};
 
 //        function handle_search(data, type) {
