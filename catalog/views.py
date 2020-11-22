@@ -16,9 +16,6 @@ class ProductListView(ListView):  # home page
         context['attributes_values'] = {attr: AttributeValue.objects.filter(attribute=attr).distinct('value')
                                         for attr in Attribute.objects.all()}
 
-        context['attributes'] = Attribute.objects.all()
-        context['attribute_value'] = AttributeValue.objects.all()
-
         return context
 
     def get_queryset(self):
