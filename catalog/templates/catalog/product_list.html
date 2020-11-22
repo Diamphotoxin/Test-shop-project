@@ -14,16 +14,16 @@
                 </ul>
                 <button  id="apply-filers" onclick="update()">Apply</button>
                 <br>
-                {% for attribute in attributes %}
-                    <h4>{{attribute}}</h4>
-                    <ul style="text-align:left">
-                        {% for value in attribute_value %}
+                    {% for attribute, values in attributes_values.items %}
+                        <h4>{{attribute}}</h4>
+                        <ul style="text-align:left">
+                            {% for value in values %}
                             <input type="checkbox" id="value_{{value.id}}" onclick=handle_filter(this)>
                             <label for="value_{{value.id}}" style="color:#ffff66">{{value}}</label>
                             <br>
-                        {% endfor %}
-                    </ul>
-                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
                 <button  id="apply-attribute_value" onclick="update()">Apply</button>
             </nav>
             {% endblock %}

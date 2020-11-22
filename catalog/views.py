@@ -13,6 +13,9 @@ class ProductListView(ListView):  # home page
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
+        context['attributes_values'] = {attr: AttributeValue.objects.filter(attribute=attr).distinct('value')
+                                        for attr in Attribute.objects.all()}
+
         context['attributes'] = Attribute.objects.all()
         context['attribute_value'] = AttributeValue.objects.all()
 

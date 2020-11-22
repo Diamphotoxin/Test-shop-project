@@ -27,12 +27,15 @@ class Order(models.Model):
 
 class Item(models.Model):
     quantity = models.PositiveIntegerField(default=1)
-    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
     attribute = models.ManyToManyField('Attribute')
+
+    class Meta:
+        verbose_name_plural = 'Categories'
 
     def __str__(self):
         return self.name
@@ -46,8 +49,8 @@ class Attribute(models.Model):
 
 
 class AttributeValue(models.Model):
-    product = models.ForeignKey('Product', on_delete=models.CASCADE)
-    attribute = models.ForeignKey('Attribute', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    attribute = models.ForeignKey(Attribute, on_delete=models.CASCADE)
     value = models.CharField(max_length=100)
 
     def __str__(self):
