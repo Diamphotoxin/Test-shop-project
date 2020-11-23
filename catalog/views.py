@@ -20,15 +20,14 @@ class ProductListView(ListView):  # home page
 
     def get_queryset(self):
         category = self.request.GET.getlist('category')
-
-        attribute_value = self.request.GET.getlist('attribute_value')
+        attribute_value = self.request.GET.getlist('value')
         queryset = Product.objects.all()
         if category:
             queryset = queryset.filter(category__id__in=category)
-            if attribute_value:  # do not sure about
-                applying_attributes = AttributeValue.objects.filter(value__in=attribute_value)
-                product_id = [val.product for val in applying_attributes]
-                queryset = queryset.filter(pk__in=product_id)
+        if attribute_value:
+            applying_attributes = AttributeValue.objects.filter(id__in=attribute_value)
+            product_id = [val.product_id for val in applying_attributes]
+            queryset = queryset.filter(id__in=product_id)
         return queryset
 
 

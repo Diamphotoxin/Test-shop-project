@@ -1,17 +1,12 @@
-       var args = {'category': [], 'attribute_value': []};
+       var args = {'category': [], 'value': []};
         var search = {};
 
-//        function handle_search(data, type) {
-//            search[type] = data.value;
-//            document.location.search = search.join('=');
-//
-//        }
 
         function handle_filter(element) {
             let parts = element.id.split('_');
             let type = parts[0];
             let id = parts[1];
-            if (!element.is_active) {
+            if (!element.is_active) { // если is_active == False  то значит что элемент выбрали, иначе его нажали второй раз(тоесть убрали галочку
                 args[type].push(id); //add ID in args with key Type
             } else {
                 args[type].forEach((value, index) => {

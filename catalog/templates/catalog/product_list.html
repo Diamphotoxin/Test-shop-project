@@ -12,8 +12,6 @@
                         <br>
                     {% endfor %}
                 </ul>
-                <button  id="apply-filers" onclick="update()">Apply</button>
-                <br>
                     {% for attribute, values in attributes_values.items %}
                         <h4>{{attribute}}</h4>
                         <ul style="text-align:left">
@@ -24,7 +22,7 @@
                             {% endfor %}
                         </ul>
                     {% endfor %}
-                <button  id="apply-attribute_value" onclick="update()">Apply</button>
+                <button  id="apply-filers" onclick="update()">Apply</button>
             </nav>
             {% endblock %}
         </div>
