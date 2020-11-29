@@ -16,8 +16,8 @@
                         <h4>{{attribute}}</h4>
                         <ul style="text-align:left">
                             {% for value in values %}
-                            <input type="checkbox" id="value_{{value.id}}" onclick=handle_filter(this)>
-                            <label for="value_{{value.id}}" style="color:#ffff66">{{value}}</label>
+                            <input type="checkbox" id="value_{{value}}" onclick=handle_filter(this)>
+                            <label for="value_{{value}}" style="color:#ffff66">{{value}}</label>
                             <br>
                             {% endfor %}
                         </ul>

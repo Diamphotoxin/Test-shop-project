@@ -25,9 +25,7 @@ class ProductListView(ListView):  # home page
         if category:
             queryset = queryset.filter(category__id__in=category)
         if attribute_value:
-            applying_attributes = AttributeValue.objects.filter(id__in=attribute_value)
-            product_id = [val.product_id for val in applying_attributes]
-            queryset = queryset.filter(id__in=product_id)
+            queryset = queryset.filter(attributevalue__value__in=attribute_value)
         return queryset
 
 
